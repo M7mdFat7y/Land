@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8f310c3d0f3c459bb92c9de4fb277c06" Name="Diagram1" ZoomLevel="87">
+        <EntityTypeShape EntityType="masterModel.ActivationStatu" Width="1.5" PointX="0.75" PointY="8.125" />
+        <EntityTypeShape EntityType="masterModel.Country" Width="1.5" PointX="0.5" PointY="11.5" />
+        <EntityTypeShape EntityType="masterModel.Customer" Width="1.5" PointX="3" PointY="7" />
+        <EntityTypeShape EntityType="masterModel.ProductImage" Width="1.5" PointX="2.875" PointY="11.625" />
+        <EntityTypeShape EntityType="masterModel.Product" Width="1.5" PointX="5.875" PointY="7" />
+        <EntityTypeShape EntityType="masterModel.SubCategory" Width="1.5" PointX="3.375" PointY="15.5" />
+        <AssociationConnector Association="masterModel.FK_ActivationStatusCustomer" />
+        <AssociationConnector Association="masterModel.FK_ActivationStatusProduct" />
+        <AssociationConnector Association="masterModel.FK_ProductProductImages" />
+        <AssociationConnector Association="masterModel.CountryCustomer" />
+        <EntityTypeShape EntityType="masterModel.Employee" Width="1.5" PointX="9.75" PointY="10.625" />
+        <AssociationConnector Association="masterModel.ActivationStatuEmployee" />
+        <EntityTypeShape EntityType="masterModel.Role" Width="1.5" PointX="12.375" PointY="11" />
+        <AssociationConnector Association="masterModel.RoleEmployee" />
+        <AssociationConnector Association="masterModel.EmployeeProduct" />
+        <EntityTypeShape EntityType="masterModel.VichDetails" Width="1.5" PointX="4.625" PointY="12.25" />
+        <AssociationConnector Association="masterModel.ProductVichDetails" />
+        <EntityTypeShape EntityType="masterModel.Cart" Width="1.5" PointX="2.625" PointY="4.5" />
+        <AssociationConnector Association="masterModel.CustomerCart" />
+        <EntityTypeShape EntityType="masterModel.CartLineItem" Width="1.5" PointX="5.5" PointY="0.75" />
+        <AssociationConnector Association="masterModel.CartCartLineItem" />
+        <AssociationConnector Association="masterModel.ProductCartLineItem" />
+        <EntityTypeShape EntityType="masterModel.WishListLineItems" Width="1.5" PointX="8.375" PointY="3.5" />
+        <EntityTypeShape EntityType="masterModel.wishlist" Width="1.5" PointX="4.625" PointY="4.25" />
+        <AssociationConnector Association="masterModel.Customerwishlist" />
+        <AssociationConnector Association="masterModel.wishlistWishListLineItems" />
+        <AssociationConnector Association="masterModel.ProductWishListLineItems" />
+        <EntityTypeShape EntityType="masterModel.OrderDetail" Width="1.5" PointX="8.5" PointY="7.5" />
+        <AssociationConnector Association="masterModel.ProductOrderDetail" />
+        <EntityTypeShape EntityType="masterModel.Order" Width="1.5" PointX="10.875" PointY="6.25" />
+        <EntityTypeShape EntityType="masterModel.TransAction" Width="1.5" PointX="13.375" PointY="8" />
+        <AssociationConnector Association="masterModel.TransActionOrder" />
+        <AssociationConnector Association="masterModel.OrderOrderDetail" />
+        <AssociationConnector Association="masterModel.CustomerOrder" />
+        <EntityTypeShape EntityType="masterModel.MainCategory" Width="1.5" PointX="0.5" PointY="15.625" />
+        <AssociationConnector Association="masterModel.MainCategorySubCategory" />
+        <EntityTypeShape EntityType="masterModel.SubSubCategory" Width="1.75" PointX="6.125" PointY="15.375" />
+        <AssociationConnector Association="masterModel.SubCategorySubSubCategory" />
+        <AssociationConnector Association="masterModel.SubSubCategoryProduct" />
+        <EntityTypeShape EntityType="masterModel.Offers" Width="1.5" PointX="11.125" PointY="3.875" />
+        <AssociationConnector Association="masterModel.ProductOffers" />
+        <AssociationConnector Association="masterModel.CountryProduct" />
+        <EntityTypeShape EntityType="masterModel.OfferCustomerWishlist" Width="1.5" PointX="10.375" PointY="1.25" />
+        <AssociationConnector Association="masterModel.OffersOfferCustomerWishlist" />
+        <AssociationConnector Association="masterModel.CustomerOfferCustomerWishlist" />
+        <EntityTypeShape EntityType="masterModel.Rating" Width="1.5" PointX="12.25" PointY="14.5" />
+        <AssociationConnector Association="masterModel.ProductRating" />
+        <AssociationConnector Association="masterModel.CustomerRating" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

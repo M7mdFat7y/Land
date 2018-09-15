@@ -1,0 +1,1645 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="masterModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="masterModelStoreContainer">
+    <EntitySet Name="ActivationStatus" EntityType="masterModel.Store.ActivationStatus" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Countries" EntityType="masterModel.Store.Countries" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Customers" EntityType="masterModel.Store.Customers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProductImages" EntityType="masterModel.Store.ProductImages" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Products" EntityType="masterModel.Store.Products" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SubCategories" EntityType="masterModel.Store.SubCategories" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Employees" EntityType="masterModel.Store.Employees" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Roles" EntityType="masterModel.Store.Roles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="VichDetails" EntityType="masterModel.Store.VichDetails" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Carts" EntityType="masterModel.Store.Carts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CartLineItems" EntityType="masterModel.Store.CartLineItems" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="WishListLineItems" EntityType="masterModel.Store.WishListLineItems" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="wishlists" EntityType="masterModel.Store.wishlists" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="OrderDetails" EntityType="masterModel.Store.OrderDetails" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Orders" EntityType="masterModel.Store.Orders" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TransActions" EntityType="masterModel.Store.TransActions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MainCategories" EntityType="masterModel.Store.MainCategories" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SubSubCategories" EntityType="masterModel.Store.SubSubCategories" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Offers" EntityType="masterModel.Store.Offers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="OfferCustomerWishlists" EntityType="masterModel.Store.OfferCustomerWishlists" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Ratings" EntityType="masterModel.Store.Ratings" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_ActivationStatusCustomer" Association="masterModel.Store.FK_ActivationStatusCustomer">
+      <End Role="ActivationStatu" EntitySet="ActivationStatus" />
+      <End Role="Customer" EntitySet="Customers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ActivationStatusProduct" Association="masterModel.Store.FK_ActivationStatusProduct">
+      <End Role="ActivationStatu" EntitySet="ActivationStatus" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductProductImages" Association="masterModel.Store.FK_ProductProductImages">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="ProductImage" EntitySet="ProductImages" />
+    </AssociationSet>
+    <AssociationSet Name="CountryCustomer" Association="masterModel.Store.CountryCustomer">
+      <End Role="Country" EntitySet="Countries" />
+      <End Role="Customer" EntitySet="Customers" />
+    </AssociationSet>
+    <AssociationSet Name="ActivationStatuEmployee" Association="masterModel.Store.ActivationStatuEmployee">
+      <End Role="ActivationStatu" EntitySet="ActivationStatus" />
+      <End Role="Employee" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="RoleEmployee" Association="masterModel.Store.RoleEmployee">
+      <End Role="Role" EntitySet="Roles" />
+      <End Role="Employee" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="EmployeeProduct" Association="masterModel.Store.EmployeeProduct">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="ProductVichDetails" Association="masterModel.Store.ProductVichDetails">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="VichDetails" EntitySet="VichDetails" />
+    </AssociationSet>
+    <AssociationSet Name="CustomerCart" Association="masterModel.Store.CustomerCart">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Cart" EntitySet="Carts" />
+    </AssociationSet>
+    <AssociationSet Name="CartCartLineItem" Association="masterModel.Store.CartCartLineItem">
+      <End Role="Cart" EntitySet="Carts" />
+      <End Role="CartLineItem" EntitySet="CartLineItems" />
+    </AssociationSet>
+    <AssociationSet Name="ProductCartLineItem" Association="masterModel.Store.ProductCartLineItem">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="CartLineItem" EntitySet="CartLineItems" />
+    </AssociationSet>
+    <AssociationSet Name="Customerwishlist" Association="masterModel.Store.Customerwishlist">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="wishlist" EntitySet="wishlists" />
+    </AssociationSet>
+    <AssociationSet Name="wishlistWishListLineItems" Association="masterModel.Store.wishlistWishListLineItems">
+      <End Role="wishlist" EntitySet="wishlists" />
+      <End Role="WishListLineItems" EntitySet="WishListLineItems" />
+    </AssociationSet>
+    <AssociationSet Name="ProductWishListLineItems" Association="masterModel.Store.ProductWishListLineItems">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="WishListLineItems" EntitySet="WishListLineItems" />
+    </AssociationSet>
+    <AssociationSet Name="ProductOrderDetail" Association="masterModel.Store.ProductOrderDetail">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="OrderDetail" EntitySet="OrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="TransActionOrder" Association="masterModel.Store.TransActionOrder">
+      <End Role="TransAction" EntitySet="TransActions" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="OrderOrderDetail" Association="masterModel.Store.OrderOrderDetail">
+      <End Role="Order" EntitySet="Orders" />
+      <End Role="OrderDetail" EntitySet="OrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="CustomerOrder" Association="masterModel.Store.CustomerOrder">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="MainCategorySubCategory" Association="masterModel.Store.MainCategorySubCategory">
+      <End Role="MainCategory" EntitySet="MainCategories" />
+      <End Role="SubCategory" EntitySet="SubCategories" />
+    </AssociationSet>
+    <AssociationSet Name="SubCategorySubSubCategory" Association="masterModel.Store.SubCategorySubSubCategory">
+      <End Role="SubCategory" EntitySet="SubCategories" />
+      <End Role="SubSubCategory" EntitySet="SubSubCategories" />
+    </AssociationSet>
+    <AssociationSet Name="SubSubCategoryProduct" Association="masterModel.Store.SubSubCategoryProduct">
+      <End Role="SubSubCategory" EntitySet="SubSubCategories" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="ProductOffers" Association="masterModel.Store.ProductOffers">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Offers" EntitySet="Offers" />
+    </AssociationSet>
+    <AssociationSet Name="CountryProduct" Association="masterModel.Store.CountryProduct">
+      <End Role="Country" EntitySet="Countries" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="OffersOfferCustomerWishlist" Association="masterModel.Store.OffersOfferCustomerWishlist">
+      <End Role="Offers" EntitySet="Offers" />
+      <End Role="OfferCustomerWishlist" EntitySet="OfferCustomerWishlists" />
+    </AssociationSet>
+    <AssociationSet Name="CustomerOfferCustomerWishlist" Association="masterModel.Store.CustomerOfferCustomerWishlist">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="OfferCustomerWishlist" EntitySet="OfferCustomerWishlists" />
+    </AssociationSet>
+    <AssociationSet Name="ProductRating" Association="masterModel.Store.ProductRating">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Rating" EntitySet="Ratings" />
+    </AssociationSet>
+    <AssociationSet Name="CustomerRating" Association="masterModel.Store.CustomerRating">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Rating" EntitySet="Ratings" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="ActivationStatus">
+    <Key>
+      <PropertyRef Name="ActivationID" />
+    </Key>
+    <Property Name="ActivationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Countries">
+    <Key>
+      <PropertyRef Name="Country_Id" />
+    </Key>
+    <Property Name="Country_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Country_Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Customers">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="RegistrationDate" Type="datetime" Nullable="false" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UserID" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ActivationID" Type="int" Nullable="false" />
+    <Property Name="Country_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductImages">
+    <Key>
+      <PropertyRef Name="ImageID" />
+    </Key>
+    <Property Name="ImageID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ContentLength" Type="int" Nullable="false" />
+    <Property Name="FileName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ProductImage1" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Product_Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Product_Price" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ActivationID" Type="int" Nullable="false" />
+    <Property Name="ProfileImage" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="StockQuantity" Type="int" Nullable="false" />
+    <Property Name="CountSell" Type="int" Nullable="false" />
+    <Property Name="EmployeeID" Type="int" Nullable="false" />
+    <Property Name="SubSubCategoryID" Type="int" Nullable="false" />
+    <Property Name="ProductDetails" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Country_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SubCategories">
+    <Key>
+      <PropertyRef Name="SubCategoryID" />
+    </Key>
+    <Property Name="SubCategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Image" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MainCategoryID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Employees">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UserID" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="RegistrationDate" Type="datetime" Nullable="false" />
+    <Property Name="ActivationID" Type="int" Nullable="false" />
+    <Property Name="RoleID" Type="int" Nullable="false" />
+    <Property Name="ShopName" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="RoleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VichDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Model" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Year" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CompanyName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CarStatus" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Product_ProductID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Carts">
+    <Key>
+      <PropertyRef Name="Cart_ID" />
+    </Key>
+    <Property Name="Cart_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Customer_CustomerID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CartLineItems">
+    <Key>
+      <PropertyRef Name="Cart_Line_ID" />
+    </Key>
+    <Property Name="Cart_Line_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+    <Property Name="Price" Type="decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="Cart_ID" Type="int" Nullable="false" />
+    <Property Name="ProductID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WishListLineItems">
+    <Key>
+      <PropertyRef Name="Wish_Line_ID" />
+    </Key>
+    <Property Name="Wish_Line_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Price" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="wishlistId" Type="int" Nullable="false" />
+    <Property Name="ProductID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="wishlists">
+    <Key>
+      <PropertyRef Name="Wish_ID" />
+    </Key>
+    <Property Name="Wish_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Customer_CustomerID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OrderDetails">
+    <Key>
+      <PropertyRef Name="OrderDetailId" />
+    </Key>
+    <Property Name="OrderDetailId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+    <Property Name="UnitPrice" Type="int" Nullable="false" />
+    <Property Name="ProductID" Type="int" Nullable="false" />
+    <Property Name="Order_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="Order_Id" />
+    </Key>
+    <Property Name="Order_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="First_Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Last_Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CityID" Type="int" Nullable="false" />
+    <Property Name="ProvinceID" Type="int" Nullable="false" />
+    <Property Name="CountryID" Type="int" Nullable="false" />
+    <Property Name="Phone" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Total" Type="decimal" Nullable="false" />
+    <Property Name="Order_Date" Type="datetime" Nullable="false" />
+    <Property Name="Order_Status" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CustomerID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TransActions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TransactionId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Order_Order_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MainCategories">
+    <Key>
+      <PropertyRef Name="MainCategoryID" />
+    </Key>
+    <Property Name="MainCategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Image" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SubSubCategories">
+    <Key>
+      <PropertyRef Name="SubSubCategoryID" />
+    </Key>
+    <Property Name="SubSubCategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Image" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SubCategoryID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Offers">
+    <Key>
+      <PropertyRef Name="Offer_ID" />
+    </Key>
+    <Property Name="Offer_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="New_Price" Type="decimal" Nullable="false" />
+    <Property Name="Start_Date" Type="datetime" Nullable="false" />
+    <Property Name="End_Date" Type="datetime" Nullable="false" />
+    <Property Name="Product_ProductID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OfferCustomerWishlists">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Offer_ID" Type="int" Nullable="false" />
+    <Property Name="CustomerID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Ratings">
+    <Key>
+      <PropertyRef Name="Rating_Id" />
+    </Key>
+    <Property Name="Rating_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Comment" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ProductID" Type="int" Nullable="false" />
+    <Property Name="RatingScore" Type="float" Nullable="false" />
+    <Property Name="CustomerID" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_ActivationStatusCustomer">
+    <End Role="ActivationStatu" Type="masterModel.Store.ActivationStatus" Multiplicity="1" />
+    <End Role="Customer" Type="masterModel.Store.Customers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ActivationStatu">
+        <PropertyRef Name="ActivationID" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="ActivationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ActivationStatusProduct">
+    <End Role="ActivationStatu" Type="masterModel.Store.ActivationStatus" Multiplicity="1" />
+    <End Role="Product" Type="masterModel.Store.Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ActivationStatu">
+        <PropertyRef Name="ActivationID" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="ActivationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductProductImages">
+    <End Role="Product" Type="masterModel.Store.Products" Multiplicity="1" />
+    <End Role="ProductImage" Type="masterModel.Store.ProductImages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="ProductImage">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CountryCustomer">
+    <End Role="Country" Type="masterModel.Store.Countries" Multiplicity="1" />
+    <End Role="Customer" Type="masterModel.Store.Customers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="Country_Id" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="Country_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ActivationStatuEmployee">
+    <End Role="ActivationStatu" Type="masterModel.Store.ActivationStatus" Multiplicity="1" />
+    <End Role="Employee" Type="masterModel.Store.Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ActivationStatu">
+        <PropertyRef Name="ActivationID" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="ActivationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RoleEmployee">
+    <End Role="Role" Type="masterModel.Store.Roles" Multiplicity="1" />
+    <End Role="Employee" Type="masterModel.Store.Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="RoleID" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EmployeeProduct">
+    <End Role="Employee" Type="masterModel.Store.Employees" Multiplicity="1" />
+    <End Role="Product" Type="masterModel.Store.Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProductVichDetails">
+    <End Role="Product" Type="masterModel.Store.Products" Multiplicity="1" />
+    <End Role="VichDetails" Type="masterModel.Store.VichDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="VichDetails">
+        <PropertyRef Name="Product_ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CustomerCart">
+    <End Role="Customer" Type="masterModel.Store.Customers" Multiplicity="1" />
+    <End Role="Cart" Type="masterModel.Store.Carts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Cart">
+        <PropertyRef Name="Customer_CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CartCartLineItem">
+    <End Role="Cart" Type="masterModel.Store.Carts" Multiplicity="1" />
+    <End Role="CartLineItem" Type="masterModel.Store.CartLineItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cart">
+        <PropertyRef Name="Cart_ID" />
+      </Principal>
+      <Dependent Role="CartLineItem">
+        <PropertyRef Name="Cart_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProductCartLineItem">
+    <End Role="Product" Type="masterModel.Store.Products" Multiplicity="1" />
+    <End Role="CartLineItem" Type="masterModel.Store.CartLineItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="CartLineItem">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Customerwishlist">
+    <End Role="Customer" Type="masterModel.Store.Customers" Multiplicity="1" />
+    <End Role="wishlist" Type="masterModel.Store.wishlists" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="wishlist">
+        <PropertyRef Name="Customer_CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="wishlistWishListLineItems">
+    <End Role="wishlist" Type="masterModel.Store.wishlists" Multiplicity="1" />
+    <End Role="WishListLineItems" Type="masterModel.Store.WishListLineItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="wishlist">
+        <PropertyRef Name="Wish_ID" />
+      </Principal>
+      <Dependent Role="WishListLineItems">
+        <PropertyRef Name="wishlistId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProductWishListLineItems">
+    <End Role="Product" Type="masterModel.Store.Products" Multiplicity="1" />
+    <End Role="WishListLineItems" Type="masterModel.Store.WishListLineItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="WishListLineItems">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProductOrderDetail">
+    <End Role="Product" Type="masterModel.Store.Products" Multiplicity="1" />
+    <End Role="OrderDetail" Type="masterModel.Store.OrderDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="OrderDetail">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TransActionOrder">
+    <End Role="TransAction" Type="masterModel.Store.TransActions" Multiplicity="*" />
+    <End Role="Order" Type="masterModel.Store.Orders" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="Order_Id" />
+      </Principal>
+      <Dependent Role="TransAction">
+        <PropertyRef Name="Order_Order_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="OrderOrderDetail">
+    <End Role="Order" Type="masterModel.Store.Orders" Multiplicity="1" />
+    <End Role="OrderDetail" Type="masterModel.Store.OrderDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="Order_Id" />
+      </Principal>
+      <Dependent Role="OrderDetail">
+        <PropertyRef Name="Order_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CustomerOrder">
+    <End Role="Customer" Type="masterModel.Store.Customers" Multiplicity="1" />
+    <End Role="Order" Type="masterModel.Store.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MainCategorySubCategory">
+    <End Role="MainCategory" Type="masterModel.Store.MainCategories" Multiplicity="1" />
+    <End Role="SubCategory" Type="masterModel.Store.SubCategories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MainCategory">
+        <PropertyRef Name="MainCategoryID" />
+      </Principal>
+      <Dependent Role="SubCategory">
+        <PropertyRef Name="MainCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SubCategorySubSubCategory">
+    <End Role="SubCategory" Type="masterModel.Store.SubCategories" Multiplicity="1" />
+    <End Role="SubSubCategory" Type="masterModel.Store.SubSubCategories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubCategory">
+        <PropertyRef Name="SubCategoryID" />
+      </Principal>
+      <Dependent Role="SubSubCategory">
+        <PropertyRef Name="SubCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SubSubCategoryProduct">
+    <End Role="SubSubCategory" Type="masterModel.Store.SubSubCategories" Multiplicity="1" />
+    <End Role="Product" Type="masterModel.Store.Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubSubCategory">
+        <PropertyRef Name="SubSubCategoryID" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="SubSubCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProductOffers">
+    <End Role="Product" Type="masterModel.Store.Products" Multiplicity="1" />
+    <End Role="Offers" Type="masterModel.Store.Offers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="Offers">
+        <PropertyRef Name="Product_ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CountryProduct">
+    <End Role="Country" Type="masterModel.Store.Countries" Multiplicity="1" />
+    <End Role="Product" Type="masterModel.Store.Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="Country_Id" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="Country_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="OffersOfferCustomerWishlist">
+    <End Role="Offers" Type="masterModel.Store.Offers" Multiplicity="1" />
+    <End Role="OfferCustomerWishlist" Type="masterModel.Store.OfferCustomerWishlists" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Offers">
+        <PropertyRef Name="Offer_ID" />
+      </Principal>
+      <Dependent Role="OfferCustomerWishlist">
+        <PropertyRef Name="Offer_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CustomerOfferCustomerWishlist">
+    <End Role="Customer" Type="masterModel.Store.Customers" Multiplicity="1" />
+    <End Role="OfferCustomerWishlist" Type="masterModel.Store.OfferCustomerWishlists" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="OfferCustomerWishlist">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProductRating">
+    <End Role="Product" Type="masterModel.Store.Products" Multiplicity="1" />
+    <End Role="Rating" Type="masterModel.Store.Ratings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="Rating">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CustomerRating">
+    <End Role="Customer" Type="masterModel.Store.Customers" Multiplicity="1" />
+    <End Role="Rating" Type="masterModel.Store.Ratings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Rating">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="masterModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ActivationStatus" EntityType="masterModel.ActivationStatu" />
+          <EntitySet Name="Countries" EntityType="masterModel.Country" />
+          <EntitySet Name="Customers" EntityType="masterModel.Customer" />
+          <EntitySet Name="ProductImages" EntityType="masterModel.ProductImage" />
+          <EntitySet Name="Products" EntityType="masterModel.Product" />
+          <EntitySet Name="SubCategories" EntityType="masterModel.SubCategory" />
+          <AssociationSet Name="FK_ActivationStatusCustomer" Association="masterModel.FK_ActivationStatusCustomer">
+            <End Role="ActivationStatu" EntitySet="ActivationStatus" />
+            <End Role="Customer" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ActivationStatusProduct" Association="masterModel.FK_ActivationStatusProduct">
+            <End Role="ActivationStatu" EntitySet="ActivationStatus" />
+            <End Role="Product" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductProductImages" Association="masterModel.FK_ProductProductImages">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="ProductImage" EntitySet="ProductImages" />
+          </AssociationSet>
+          <AssociationSet Name="CountryCustomer" Association="masterModel.CountryCustomer">
+            <End Role="Country" EntitySet="Countries" />
+            <End Role="Customer" EntitySet="Customers" />
+          </AssociationSet>
+          <EntitySet Name="Employees" EntityType="masterModel.Employee" />
+          <AssociationSet Name="ActivationStatuEmployee" Association="masterModel.ActivationStatuEmployee">
+            <End Role="ActivationStatu" EntitySet="ActivationStatus" />
+            <End Role="Employee" EntitySet="Employees" />
+          </AssociationSet>
+          <EntitySet Name="Roles" EntityType="masterModel.Role" />
+          <AssociationSet Name="RoleEmployee" Association="masterModel.RoleEmployee">
+            <End Role="Role" EntitySet="Roles" />
+            <End Role="Employee" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="EmployeeProduct" Association="masterModel.EmployeeProduct">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="Product" EntitySet="Products" />
+          </AssociationSet>
+          <EntitySet Name="VichDetails" EntityType="masterModel.VichDetails" />
+          <AssociationSet Name="ProductVichDetails" Association="masterModel.ProductVichDetails">
+            <End EntitySet="Products" Role="Product" />
+            <End EntitySet="VichDetails" Role="VichDetails" />
+          </AssociationSet>
+          <EntitySet Name="Carts" EntityType="masterModel.Cart" />
+          <AssociationSet Name="CustomerCart" Association="masterModel.CustomerCart">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="Cart" EntitySet="Carts" />
+          </AssociationSet>
+          <EntitySet Name="CartLineItems" EntityType="masterModel.CartLineItem" />
+          <AssociationSet Name="CartCartLineItem" Association="masterModel.CartCartLineItem">
+            <End Role="Cart" EntitySet="Carts" />
+            <End Role="CartLineItem" EntitySet="CartLineItems" />
+          </AssociationSet>
+          <AssociationSet Name="ProductCartLineItem" Association="masterModel.ProductCartLineItem">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="CartLineItem" EntitySet="CartLineItems" />
+          </AssociationSet>
+          <EntitySet Name="WishListLineItems" EntityType="masterModel.WishListLineItems" />
+          <EntitySet Name="wishlists" EntityType="masterModel.wishlist" />
+          <AssociationSet Name="Customerwishlist" Association="masterModel.Customerwishlist">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="wishlist" EntitySet="wishlists" />
+          </AssociationSet>
+          <AssociationSet Name="wishlistWishListLineItems" Association="masterModel.wishlistWishListLineItems">
+            <End Role="wishlist" EntitySet="wishlists" />
+            <End Role="WishListLineItems" EntitySet="WishListLineItems" />
+          </AssociationSet>
+          <AssociationSet Name="ProductWishListLineItems" Association="masterModel.ProductWishListLineItems">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="WishListLineItems" EntitySet="WishListLineItems" />
+          </AssociationSet>
+          <EntitySet Name="OrderDetails" EntityType="masterModel.OrderDetail" />
+          <AssociationSet Name="ProductOrderDetail" Association="masterModel.ProductOrderDetail">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="OrderDetail" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <EntitySet Name="Orders" EntityType="masterModel.Order" />
+          <EntitySet Name="TransActions" EntityType="masterModel.TransAction" />
+          <AssociationSet Name="TransActionOrder" Association="masterModel.TransActionOrder">
+            <End Role="TransAction" EntitySet="TransActions" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="OrderOrderDetail" Association="masterModel.OrderOrderDetail">
+            <End Role="Order" EntitySet="Orders" />
+            <End Role="OrderDetail" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="CustomerOrder" Association="masterModel.CustomerOrder">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <EntitySet Name="MainCategories" EntityType="masterModel.MainCategory" />
+          <AssociationSet Name="MainCategorySubCategory" Association="masterModel.MainCategorySubCategory">
+            <End Role="MainCategory" EntitySet="MainCategories" />
+            <End Role="SubCategory" EntitySet="SubCategories" />
+          </AssociationSet>
+          <EntitySet Name="SubSubCategories" EntityType="masterModel.SubSubCategory" />
+          <AssociationSet Name="SubCategorySubSubCategory" Association="masterModel.SubCategorySubSubCategory">
+            <End Role="SubCategory" EntitySet="SubCategories" />
+            <End Role="SubSubCategory" EntitySet="SubSubCategories" />
+          </AssociationSet>
+          <AssociationSet Name="SubSubCategoryProduct" Association="masterModel.SubSubCategoryProduct">
+            <End Role="SubSubCategory" EntitySet="SubSubCategories" />
+            <End Role="Product" EntitySet="Products" />
+          </AssociationSet>
+          <EntitySet Name="Offers" EntityType="masterModel.Offers" />
+          <AssociationSet Name="ProductOffers" Association="masterModel.ProductOffers">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="Offers" EntitySet="Offers" />
+          </AssociationSet>
+          <AssociationSet Name="CountryProduct" Association="masterModel.CountryProduct">
+            <End Role="Country" EntitySet="Countries" />
+            <End Role="Product" EntitySet="Products" />
+          </AssociationSet>
+          <EntitySet Name="OfferCustomerWishlists" EntityType="masterModel.OfferCustomerWishlist" />
+          <AssociationSet Name="OffersOfferCustomerWishlist" Association="masterModel.OffersOfferCustomerWishlist">
+            <End Role="Offers" EntitySet="Offers" />
+            <End Role="OfferCustomerWishlist" EntitySet="OfferCustomerWishlists" />
+          </AssociationSet>
+          <AssociationSet Name="CustomerOfferCustomerWishlist" Association="masterModel.CustomerOfferCustomerWishlist">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="OfferCustomerWishlist" EntitySet="OfferCustomerWishlists" />
+          </AssociationSet>
+          <EntitySet Name="Ratings" EntityType="masterModel.Rating" />
+          <AssociationSet Name="ProductRating" Association="masterModel.ProductRating">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="Rating" EntitySet="Ratings" />
+          </AssociationSet>
+          <AssociationSet Name="CustomerRating" Association="masterModel.CustomerRating">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="Rating" EntitySet="Ratings" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="ActivationStatu">
+          <Key>
+            <PropertyRef Name="ActivationID" />
+          </Key>
+          <Property Name="ActivationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Customers" Relationship="masterModel.FK_ActivationStatusCustomer" FromRole="ActivationStatu" ToRole="Customer" />
+          <NavigationProperty Name="Products" Relationship="masterModel.FK_ActivationStatusProduct" FromRole="ActivationStatu" ToRole="Product" />
+          <NavigationProperty Name="Employees" Relationship="masterModel.ActivationStatuEmployee" FromRole="ActivationStatu" ToRole="Employee" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="Country_Id" />
+          </Key>
+          <Property Name="Country_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Country_Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Customers" Relationship="masterModel.CountryCustomer" FromRole="Country" ToRole="Customer" />
+          <NavigationProperty Name="Products" Relationship="masterModel.CountryProduct" FromRole="Country" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+          </Key>
+          <Property Name="CustomerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FullName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RegistrationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UserID" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ActivationID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ActivationStatu" Relationship="masterModel.FK_ActivationStatusCustomer" FromRole="Customer" ToRole="ActivationStatu" />
+          <NavigationProperty Name="Country" Relationship="masterModel.CountryCustomer" FromRole="Customer" ToRole="Country" />
+          <Property Name="Country_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Cart" Relationship="masterModel.CustomerCart" FromRole="Customer" ToRole="Cart" />
+          <NavigationProperty Name="wishlist" Relationship="masterModel.Customerwishlist" FromRole="Customer" ToRole="wishlist" />
+          <NavigationProperty Name="Orders" Relationship="masterModel.CustomerOrder" FromRole="Customer" ToRole="Order" />
+          <NavigationProperty Name="OfferCustomerWishlists" Relationship="masterModel.CustomerOfferCustomerWishlist" FromRole="Customer" ToRole="OfferCustomerWishlist" />
+          <NavigationProperty Name="Ratings" Relationship="masterModel.CustomerRating" FromRole="Customer" ToRole="Rating" />
+        </EntityType>
+        <EntityType Name="ProductImage">
+          <Key>
+            <PropertyRef Name="ImageID" />
+          </Key>
+          <Property Name="ImageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ContentLength" Type="Int32" Nullable="false" />
+          <Property Name="FileName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProductImage1" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Product" Relationship="masterModel.FK_ProductProductImages" FromRole="ProductImage" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Product_Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Product_Price" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ActivationID" Type="Int32" Nullable="false" />
+          <Property Name="ProfileImage" Type="String" Nullable="false" />
+          <Property Name="StockQuantity" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ActivationStatu" Relationship="masterModel.FK_ActivationStatusProduct" FromRole="Product" ToRole="ActivationStatu" />
+          <NavigationProperty Name="ProductImages" Relationship="masterModel.FK_ProductProductImages" FromRole="Product" ToRole="ProductImage" />
+          <Property Name="CountSell" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Employee" Relationship="masterModel.EmployeeProduct" FromRole="Product" ToRole="Employee" />
+          <Property Name="EmployeeID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="VichDetail" Relationship="masterModel.ProductVichDetails" FromRole="Product" ToRole="VichDetails" />
+          <NavigationProperty Name="CartLineItems" Relationship="masterModel.ProductCartLineItem" FromRole="Product" ToRole="CartLineItem" />
+          <NavigationProperty Name="WishListLineItems" Relationship="masterModel.ProductWishListLineItems" FromRole="Product" ToRole="WishListLineItems" />
+          <NavigationProperty Name="OrderDetails" Relationship="masterModel.ProductOrderDetail" FromRole="Product" ToRole="OrderDetail" />
+          <NavigationProperty Name="SubSubCategory" Relationship="masterModel.SubSubCategoryProduct" FromRole="Product" ToRole="SubSubCategory" />
+          <Property Name="SubSubCategoryID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Offer" Relationship="masterModel.ProductOffers" FromRole="Product" ToRole="Offers" />
+          <Property Name="ProductDetails" Type="String" Nullable="false" />
+          <NavigationProperty Name="Country" Relationship="masterModel.CountryProduct" FromRole="Product" ToRole="Country" />
+          <Property Name="Country_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Ratings" Relationship="masterModel.ProductRating" FromRole="Product" ToRole="Rating" />
+        </EntityType>
+        <EntityType Name="SubCategory">
+          <Key>
+            <PropertyRef Name="SubCategoryID" />
+          </Key>
+          <Property Name="SubCategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" Nullable="false" />
+          <NavigationProperty Name="MainCategory" Relationship="masterModel.MainCategorySubCategory" FromRole="SubCategory" ToRole="MainCategory" />
+          <Property Name="MainCategoryID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="SubSubCategories" Relationship="masterModel.SubCategorySubSubCategory" FromRole="SubCategory" ToRole="SubSubCategory" />
+        </EntityType>
+        <Association Name="FK_ActivationStatusCustomer">
+          <End Type="masterModel.ActivationStatu" Role="ActivationStatu" Multiplicity="1" />
+          <End Type="masterModel.Customer" Role="Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ActivationStatu">
+              <PropertyRef Name="ActivationID" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="ActivationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ActivationStatusProduct">
+          <End Type="masterModel.ActivationStatu" Role="ActivationStatu" Multiplicity="1" />
+          <End Type="masterModel.Product" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ActivationStatu">
+              <PropertyRef Name="ActivationID" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="ActivationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductProductImages">
+          <End Type="masterModel.Product" Role="Product" Multiplicity="1" />
+          <End Type="masterModel.ProductImage" Role="ProductImage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="ProductImage">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CountryCustomer">
+          <End Type="masterModel.Country" Role="Country" Multiplicity="1" />
+          <End Type="masterModel.Customer" Role="Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="Country_Id" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="Country_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="UserID" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="RegistrationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="ActivationStatu" Relationship="masterModel.ActivationStatuEmployee" FromRole="Employee" ToRole="ActivationStatu" />
+          <Property Name="ActivationID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Role" Relationship="masterModel.RoleEmployee" FromRole="Employee" ToRole="Role" />
+          <Property Name="RoleID" Type="Int32" Nullable="false" />
+          <Property Name="ShopName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Products" Relationship="masterModel.EmployeeProduct" FromRole="Employee" ToRole="Product" />
+        </EntityType>
+        <Association Name="ActivationStatuEmployee">
+          <End Type="masterModel.ActivationStatu" Role="ActivationStatu" Multiplicity="1" />
+          <End Type="masterModel.Employee" Role="Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ActivationStatu">
+              <PropertyRef Name="ActivationID" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="ActivationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="RoleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Employees" Relationship="masterModel.RoleEmployee" FromRole="Role" ToRole="Employee" />
+        </EntityType>
+        <Association Name="RoleEmployee">
+          <End Type="masterModel.Role" Role="Role" Multiplicity="1" />
+          <End Type="masterModel.Employee" Role="Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="RoleID" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EmployeeProduct">
+          <End Type="masterModel.Employee" Role="Employee" Multiplicity="1" />
+          <End Type="masterModel.Product" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="EmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="VichDetails">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Model" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Year" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="CompanyName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="CarStatus" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Product" Relationship="masterModel.ProductVichDetails" FromRole="VichDetails" ToRole="Product" />
+        </EntityType>
+        <Association Name="ProductVichDetails">
+          <End Type="masterModel.Product" Multiplicity="1" Role="Product" />
+          <End Type="masterModel.VichDetails" Multiplicity="0..1" Role="VichDetails" />
+        </Association>
+        <EntityType Name="Cart">
+          <Key>
+            <PropertyRef Name="Cart_ID" />
+          </Key>
+          <Property Name="Cart_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Customer" Relationship="masterModel.CustomerCart" FromRole="Cart" ToRole="Customer" />
+          <NavigationProperty Name="CartLineItems" Relationship="masterModel.CartCartLineItem" FromRole="Cart" ToRole="CartLineItem" />
+        </EntityType>
+        <Association Name="CustomerCart">
+          <End Type="masterModel.Customer" Role="Customer" Multiplicity="1" />
+          <End Type="masterModel.Cart" Role="Cart" Multiplicity="0..1" />
+        </Association>
+        <EntityType Name="CartLineItem">
+          <Key>
+            <PropertyRef Name="Cart_Line_ID" />
+          </Key>
+          <Property Name="Cart_Line_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <NavigationProperty Name="Cart" Relationship="masterModel.CartCartLineItem" FromRole="CartLineItem" ToRole="Cart" />
+          <Property Name="Cart_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Product" Relationship="masterModel.ProductCartLineItem" FromRole="CartLineItem" ToRole="Product" />
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="CartCartLineItem">
+          <End Type="masterModel.Cart" Role="Cart" Multiplicity="1" />
+          <End Type="masterModel.CartLineItem" Role="CartLineItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cart">
+              <PropertyRef Name="Cart_ID" />
+            </Principal>
+            <Dependent Role="CartLineItem">
+              <PropertyRef Name="Cart_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ProductCartLineItem">
+          <End Type="masterModel.Product" Role="Product" Multiplicity="1" />
+          <End Type="masterModel.CartLineItem" Role="CartLineItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="CartLineItem">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="WishListLineItems">
+          <Key>
+            <PropertyRef Name="Wish_Line_ID" />
+          </Key>
+          <Property Name="Wish_Line_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Price" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="wishlist" Relationship="masterModel.wishlistWishListLineItems" FromRole="WishListLineItems" ToRole="wishlist" />
+          <Property Name="wishlistId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Product" Relationship="masterModel.ProductWishListLineItems" FromRole="WishListLineItems" ToRole="Product" />
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="wishlist">
+          <Key>
+            <PropertyRef Name="Wish_ID" />
+          </Key>
+          <Property Name="Wish_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Customer" Relationship="masterModel.Customerwishlist" FromRole="wishlist" ToRole="Customer" />
+          <NavigationProperty Name="WishListLineItems" Relationship="masterModel.wishlistWishListLineItems" FromRole="wishlist" ToRole="WishListLineItems" />
+        </EntityType>
+        <Association Name="Customerwishlist">
+          <End Type="masterModel.Customer" Role="Customer" Multiplicity="1" />
+          <End Type="masterModel.wishlist" Role="wishlist" Multiplicity="0..1" />
+        </Association>
+        <Association Name="wishlistWishListLineItems">
+          <End Type="masterModel.wishlist" Role="wishlist" Multiplicity="1" />
+          <End Type="masterModel.WishListLineItems" Role="WishListLineItems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="wishlist">
+              <PropertyRef Name="Wish_ID" />
+            </Principal>
+            <Dependent Role="WishListLineItems">
+              <PropertyRef Name="wishlistId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ProductWishListLineItems">
+          <End Type="masterModel.Product" Role="Product" Multiplicity="1" />
+          <End Type="masterModel.WishListLineItems" Role="WishListLineItems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="WishListLineItems">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="OrderDetail">
+          <Key>
+            <PropertyRef Name="OrderDetailId" />
+          </Key>
+          <Property Name="OrderDetailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="UnitPrice" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Product" Relationship="masterModel.ProductOrderDetail" FromRole="OrderDetail" ToRole="Product" />
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Order" Relationship="masterModel.OrderOrderDetail" FromRole="OrderDetail" ToRole="Order" />
+          <Property Name="Order_Id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="ProductOrderDetail">
+          <End Type="masterModel.Product" Role="Product" Multiplicity="1" />
+          <End Type="masterModel.OrderDetail" Role="OrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="OrderDetail">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="Order_Id" />
+          </Key>
+          <Property Name="Order_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="First_Name" Type="String" Nullable="false" />
+          <Property Name="Last_Name" Type="String" Nullable="false" />
+          <Property Name="Address" Type="String" Nullable="false" />
+          <Property Name="CityID" Type="Int32" Nullable="false" />
+          <Property Name="ProvinceID" Type="Int32" Nullable="false" />
+          <Property Name="CountryID" Type="Int32" Nullable="false" />
+          <Property Name="Phone" Type="String" Nullable="false" />
+          <Property Name="Email" Type="String" Nullable="false" />
+          <Property Name="Total" Type="Decimal" Nullable="false" />
+          <Property Name="Order_Date" Type="DateTime" Nullable="false" />
+          <Property Name="Order_Status" Type="String" Nullable="false" />
+          <NavigationProperty Name="TransAction" Relationship="masterModel.TransActionOrder" FromRole="Order" ToRole="TransAction" />
+          <NavigationProperty Name="OrderDetails" Relationship="masterModel.OrderOrderDetail" FromRole="Order" ToRole="OrderDetail" />
+          <NavigationProperty Name="Customer" Relationship="masterModel.CustomerOrder" FromRole="Order" ToRole="Customer" />
+          <Property Name="CustomerID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TransAction">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TransactionId" Type="String" Nullable="false" />
+          <NavigationProperty Name="Order" Relationship="masterModel.TransActionOrder" FromRole="TransAction" ToRole="Order" />
+        </EntityType>
+        <Association Name="TransActionOrder">
+          <End Type="masterModel.TransAction" Role="TransAction" Multiplicity="1" />
+          <End Type="masterModel.Order" Role="Order" Multiplicity="1" />
+        </Association>
+        <Association Name="OrderOrderDetail">
+          <End Type="masterModel.Order" Role="Order" Multiplicity="1" />
+          <End Type="masterModel.OrderDetail" Role="OrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="Order_Id" />
+            </Principal>
+            <Dependent Role="OrderDetail">
+              <PropertyRef Name="Order_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CustomerOrder">
+          <End Type="masterModel.Customer" Role="Customer" Multiplicity="1" />
+          <End Type="masterModel.Order" Role="Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerID" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="MainCategory">
+          <Key>
+            <PropertyRef Name="MainCategoryID" />
+          </Key>
+          <Property Name="MainCategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="SubCategories" Relationship="masterModel.MainCategorySubCategory" FromRole="MainCategory" ToRole="SubCategory" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <Property Name="Image" Type="String" Nullable="false" />
+        </EntityType>
+        <Association Name="MainCategorySubCategory">
+          <End Type="masterModel.MainCategory" Role="MainCategory" Multiplicity="1" />
+          <End Type="masterModel.SubCategory" Role="SubCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MainCategory">
+              <PropertyRef Name="MainCategoryID" />
+            </Principal>
+            <Dependent Role="SubCategory">
+              <PropertyRef Name="MainCategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="SubSubCategory">
+          <Key>
+            <PropertyRef Name="SubSubCategoryID" />
+          </Key>
+          <Property Name="SubSubCategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" Nullable="false" />
+          <NavigationProperty Name="SubCategory" Relationship="masterModel.SubCategorySubSubCategory" FromRole="SubSubCategory" ToRole="SubCategory" />
+          <Property Name="SubCategoryID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Products" Relationship="masterModel.SubSubCategoryProduct" FromRole="SubSubCategory" ToRole="Product" />
+        </EntityType>
+        <Association Name="SubCategorySubSubCategory">
+          <End Type="masterModel.SubCategory" Role="SubCategory" Multiplicity="1" />
+          <End Type="masterModel.SubSubCategory" Role="SubSubCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SubCategory">
+              <PropertyRef Name="SubCategoryID" />
+            </Principal>
+            <Dependent Role="SubSubCategory">
+              <PropertyRef Name="SubCategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SubSubCategoryProduct">
+          <End Type="masterModel.SubSubCategory" Role="SubSubCategory" Multiplicity="1" />
+          <End Type="masterModel.Product" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SubSubCategory">
+              <PropertyRef Name="SubSubCategoryID" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="SubSubCategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Offers">
+          <Key>
+            <PropertyRef Name="Offer_ID" />
+          </Key>
+          <Property Name="Offer_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="New_Price" Type="Decimal" Nullable="false" />
+          <Property Name="Start_Date" Type="DateTime" Nullable="false" />
+          <Property Name="End_Date" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Product" Relationship="masterModel.ProductOffers" FromRole="Offers" ToRole="Product" />
+          <NavigationProperty Name="OfferCustomerWishlists" Relationship="masterModel.OffersOfferCustomerWishlist" FromRole="Offers" ToRole="OfferCustomerWishlist" />
+        </EntityType>
+        <Association Name="ProductOffers">
+          <End Type="masterModel.Product" Role="Product" Multiplicity="1" />
+          <End Type="masterModel.Offers" Role="Offers" Multiplicity="0..1" />
+        </Association>
+        <Association Name="CountryProduct">
+          <End Type="masterModel.Country" Role="Country" Multiplicity="1" />
+          <End Type="masterModel.Product" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="Country_Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="Country_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="OfferCustomerWishlist">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Offer" Relationship="masterModel.OffersOfferCustomerWishlist" FromRole="OfferCustomerWishlist" ToRole="Offers" />
+          <Property Name="Offer_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Customer" Relationship="masterModel.CustomerOfferCustomerWishlist" FromRole="OfferCustomerWishlist" ToRole="Customer" />
+          <Property Name="CustomerID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="OffersOfferCustomerWishlist">
+          <End Type="masterModel.Offers" Role="Offers" Multiplicity="1" />
+          <End Type="masterModel.OfferCustomerWishlist" Role="OfferCustomerWishlist" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Offers">
+              <PropertyRef Name="Offer_ID" />
+            </Principal>
+            <Dependent Role="OfferCustomerWishlist">
+              <PropertyRef Name="Offer_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CustomerOfferCustomerWishlist">
+          <End Type="masterModel.Customer" Role="Customer" Multiplicity="1" />
+          <End Type="masterModel.OfferCustomerWishlist" Role="OfferCustomerWishlist" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerID" />
+            </Principal>
+            <Dependent Role="OfferCustomerWishlist">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Rating">
+          <Key>
+            <PropertyRef Name="Rating_Id" />
+          </Key>
+          <Property Name="Rating_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Comment" Type="String" Nullable="false" />
+          <NavigationProperty Name="Product" Relationship="masterModel.ProductRating" FromRole="Rating" ToRole="Product" />
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+          <Property Name="RatingScore" Type="Double" Nullable="false" />
+          <NavigationProperty Name="Customer" Relationship="masterModel.CustomerRating" FromRole="Rating" ToRole="Customer" />
+          <Property Name="CustomerID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="ProductRating">
+          <End Type="masterModel.Product" Role="Product" Multiplicity="1" />
+          <End Type="masterModel.Rating" Role="Rating" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="Rating">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CustomerRating">
+          <End Type="masterModel.Customer" Role="Customer" Multiplicity="1" />
+          <End Type="masterModel.Rating" Role="Rating" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerID" />
+            </Principal>
+            <Dependent Role="Rating">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="masterModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="ActivationStatus">
+      <EntityTypeMapping TypeName="IsTypeOf(masterModel.ActivationStatu)">
+        <MappingFragment StoreEntitySet="ActivationStatus">
+          <ScalarProperty Name="ActivationID" ColumnName="ActivationID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Countries">
+      <EntityTypeMapping TypeName="IsTypeOf(masterModel.Country)">
+        <MappingFragment StoreEntitySet="Countries">
+          <ScalarProperty Name="Country_Id" ColumnName="Country_Id" />
+          <ScalarProperty Name="Country_Name" ColumnName="Country_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="IsTypeOf(masterModel.Customer)">
+        <MappingFragment StoreEntitySet="Customers">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="RegistrationDate" ColumnName="RegistrationDate" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ActivationID" ColumnName="ActivationID" />
+          <ScalarProperty Name="Country_Id" ColumnName="Country_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductImages">
+      <EntityTypeMapping TypeName="IsTypeOf(masterModel.ProductImage)">
+        <MappingFragment StoreEntitySet="ProductImages">
+          <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+          <ScalarProperty Name="ContentLength" ColumnName="ContentLength" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="ProductImage1" ColumnName="ProductImage1" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="IsTypeOf(masterModel.Product)">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="Product_Name" ColumnName="Product_Name" />
+          <ScalarProperty Name="Product_Price" ColumnName="Product_Price" />
+          <ScalarProperty Name="ActivationID" ColumnName="ActivationID" />
+          <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
+          <ScalarProperty Name="StockQuantity" ColumnName="StockQuantity" />
+          <ScalarProperty Name="CountSell" ColumnName="CountSell" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="SubSubCategoryID" ColumnName="SubSubCategoryID" />
+          <ScalarProperty Name="ProductDetails" ColumnName="ProductDetails" />
+          <ScalarProperty Name="Country_Id" ColumnName="Country_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SubCategories">
+      <EntityTypeMapping TypeName="IsTypeOf(masterModel.SubCategory)">
+        <MappingFragment StoreEntitySet="SubCategories">
+          <ScalarProperty Name="SubCategoryID" ColumnName="SubCategoryID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="MainCategoryID" ColumnName="MainCategoryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="IsTypeOf(masterModel.Employee)">
+        <MappingFragment StoreEntitySet="Employees">
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="RegistrationDate" ColumnName="RegistrationDate" />
+          <ScalarProperty Name="ActivationID" ColumnName="ActivationID" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="ShopName" ColumnName="ShopName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="IsTypeOf(masterModel.Role)">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VichDetails">
+      <EntityTypeMapping TypeName="IsTypeOf(masterModel.VichDetails)">
+        <MappingFragment StoreEntitySet="VichDetails">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="CarStatus" ColumnName="CarStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Carts">
+      <EntityTypeMapping TypeName="IsTypeOf(masterModel.Cart)">
+        <MappingFragment StoreEntitySet="Carts">
+          <ScalarProperty Name="Cart_ID" ColumnName="Cart_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CartLineItems">
+      <EntityTypeMapping TypeName="IsTypeOf(masterModel.CartLineItem)">
+        <MappingFragment StoreEntitySet="CartLineItems">
+          <ScalarProperty Name="Cart_Line_ID" ColumnName="Cart_Line_ID" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Cart_ID" ColumnName="Cart_ID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WishListLineItems">
+      <EntityTypeMapping TypeName="IsTypeOf(masterModel.WishListLineItems)">
+        <MappingFragment StoreEntitySet="WishListLineItems">
+          <ScalarProperty Name="Wish_Line_ID" ColumnName="Wish_Line_ID" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="wishlistId" ColumnName="wishlistId" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="wishlists">
+      <EntityTypeMapping TypeName="IsTypeOf(masterModel.wishlist)">
+        <MappingFragment StoreEntitySet="wishlists">
+          <ScalarProperty Name="Wish_ID" ColumnName="Wish_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderDetails">
+      <EntityTypeMapping TypeName="IsTypeOf(masterModel.OrderDetail)">
+        <MappingFragment StoreEntitySet="OrderDetails">
+          <ScalarProperty Name="OrderDetailId" ColumnName="OrderDetailId" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="Order_Id" ColumnName="Order_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="IsTypeOf(masterModel.Order)">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="Order_Id" ColumnName="Order_Id" />
+          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="ProvinceID" ColumnName="ProvinceID" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Order_Date" ColumnName="Order_Date" />
+          <ScalarProperty Name="Order_Status" ColumnName="Order_Status" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TransActions">
+      <EntityTypeMapping TypeName="IsTypeOf(masterModel.TransAction)">
+        <MappingFragment StoreEntitySet="TransActions">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MainCategories">
+      <EntityTypeMapping TypeName="IsTypeOf(masterModel.MainCategory)">
+        <MappingFragment StoreEntitySet="MainCategories">
+          <ScalarProperty Name="MainCategoryID" ColumnName="MainCategoryID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SubSubCategories">
+      <EntityTypeMapping TypeName="IsTypeOf(masterModel.SubSubCategory)">
+        <MappingFragment StoreEntitySet="SubSubCategories">
+          <ScalarProperty Name="SubSubCategoryID" ColumnName="SubSubCategoryID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="SubCategoryID" ColumnName="SubCategoryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Offers">
+      <EntityTypeMapping TypeName="IsTypeOf(masterModel.Offers)">
+        <MappingFragment StoreEntitySet="Offers">
+          <ScalarProperty Name="Offer_ID" ColumnName="Offer_ID" />
+          <ScalarProperty Name="New_Price" ColumnName="New_Price" />
+          <ScalarProperty Name="Start_Date" ColumnName="Start_Date" />
+          <ScalarProperty Name="End_Date" ColumnName="End_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OfferCustomerWishlists">
+      <EntityTypeMapping TypeName="IsTypeOf(masterModel.OfferCustomerWishlist)">
+        <MappingFragment StoreEntitySet="OfferCustomerWishlists">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Offer_ID" ColumnName="Offer_ID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ratings">
+      <EntityTypeMapping TypeName="IsTypeOf(masterModel.Rating)">
+        <MappingFragment StoreEntitySet="Ratings">
+          <ScalarProperty Name="Rating_Id" ColumnName="Rating_Id" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="RatingScore" ColumnName="RatingScore" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="ProductVichDetails" TypeName="masterModel.ProductVichDetails" StoreEntitySet="VichDetails">
+      <EndProperty Name="Product">
+        <ScalarProperty Name="ProductID" ColumnName="Product_ProductID" />
+      </EndProperty>
+      <EndProperty Name="VichDetails">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CustomerCart" TypeName="masterModel.CustomerCart" StoreEntitySet="Carts">
+      <EndProperty Name="Customer">
+        <ScalarProperty Name="CustomerID" ColumnName="Customer_CustomerID" />
+      </EndProperty>
+      <EndProperty Name="Cart">
+        <ScalarProperty Name="Cart_ID" ColumnName="Cart_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Customerwishlist" TypeName="masterModel.Customerwishlist" StoreEntitySet="wishlists">
+      <EndProperty Name="Customer">
+        <ScalarProperty Name="CustomerID" ColumnName="Customer_CustomerID" />
+      </EndProperty>
+      <EndProperty Name="wishlist">
+        <ScalarProperty Name="Wish_ID" ColumnName="Wish_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TransActionOrder" TypeName="masterModel.TransActionOrder" StoreEntitySet="TransActions">
+      <EndProperty Name="Order">
+        <ScalarProperty Name="Order_Id" ColumnName="Order_Order_Id" />
+      </EndProperty>
+      <EndProperty Name="TransAction">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ProductOffers" TypeName="masterModel.ProductOffers" StoreEntitySet="Offers">
+      <EndProperty Name="Product">
+        <ScalarProperty Name="ProductID" ColumnName="Product_ProductID" />
+      </EndProperty>
+      <EndProperty Name="Offers">
+        <ScalarProperty Name="Offer_ID" ColumnName="Offer_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
